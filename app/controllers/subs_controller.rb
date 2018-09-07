@@ -1,5 +1,7 @@
 class SubsController < 
+  skip_before_action :verify_paid, only: :index
   before_action :set_sub, only: [:show, :update, :edit, :destroy]
+  
 
   def index
     @subs = Sub.all
